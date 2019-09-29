@@ -11,13 +11,12 @@
       <script src="node_modules/jquery/dist/jquery.js"></script>
       <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
       <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-       <body style="background-color:;">
+       <body>
 	     <!-- <i class="text mt-5" style="background-color:red;"></i> -->
      	 <div class="container-fluid">
   	 	<h1 style="font-family:calibri light;background-color: #e6ffe6;width:100%color: blue; left: 0px"><center>e-<span style="color: red;"> Receipt</span></center></h1>
 		 <!-- <div class="jumbotron jumbotron-fluid">          -->
-    	<div class="container">
-    		<div class="card-block shadow-lg p-12 m-12">
+    		<div class="container card mt-4" style="background-color: transparent;">
            	<div class="col-md-12 mt-5">  
 	 			<div style="background-color:#1ab2ff;height:70px;color: white;border-radius:2px;"><center><h5>Hello  Testing  1 2 3</h5></center></div>
 	 			<div class="table-responsive">
@@ -29,12 +28,12 @@
 					 			<td>Price</td>
 					 			<td>Quantity</td>
 					 			<td>Total</td>
-					 			<td>Actions</td>
+					 			<td colspan="2">Actions</td>
 					 		  </tr>
 		 				</thead>
 		 				<tbody>
 							  <tr>
-								<td>1</td><td><input type='text' class='name form-control' id="n"></td><td><input type='text' class='price form-control' id="pr"></td><td><input type='text'  class='quant form-control' id="q"></td><td><input type='text' id="t" class='total form-control' disabled=""></td><td><button class='btn btn-info' id='edit'>EDIT</button><button class='btn btn-info btn-danger btn-sm' id='rem'><img src='trash.png'></button></td>
+								<td>1</td><td><input type='text' class='name form-control' id="n"></td><td><input type='text' class='price form-control' id="pr"></td><td><input type='text'  class='quant form-control' id="q"></td><td><input type='text' id="t" class='total form-control' disabled=""></td><td><button class='btn btn-info' id='edit'>EDIT</button></td><td><button class='btn btn-info btn-danger' id='rem'>DEL</button></td>
 							</tr> 
 		 				</tbody>
 
@@ -55,7 +54,7 @@
       		                	<button id="add" class="btn btn-info btn-basic">+Add</button>
       	             	</center> 
                      </div>
-                 		<div id="warn" class="alert alert-danger" style="display: none;" >
+                 		<div id="warn" class="col-md-6 alert alert-danger" style="display: none;" >
                     <strong>Warning!</strong>please fill the inputs.
                  </div>
          	    </div>
@@ -80,7 +79,7 @@
         var strDetails;
         var count=2;;
 		         $("#add").on("click",function(){
-                               var incr = "<tr><td>"+count+"</td><td><input type='text' class='name form-control' id='n'><td><input type='text' name=''  class='price form-control' id='pr' ></td><td><input type='text' class='quant form-control' id='q'></td><td><input type='text' class='total form-control' disabled='' id='t'></td><td><button class='btn btn-info btn-primary btn-sm' id='edit'>EDIT</button><button class='btn btn-info btn-danger btn-sm' id='rem'><img src='trash.png'></button></tr></td>";
+                               var incr = "<tr><td>"+count+"</td><td><input type='text' class='name form-control' id='n'><td><input type='text' name=''  class='price form-control' id='pr' ></td><td><input type='text' class='quant form-control' id='q'></td><td><input type='text' class='total form-control' disabled='' id='t'></td><td><button class='btn btn-info' id='edit'>EDIT</button></td><td><button class='btn btn-info btn-danger' id='rem'>DEL</button></tr></td>";
 
  		         	                var a= $(".name:last").val();
                               var b= $(".price:last").val();
@@ -137,7 +136,7 @@
                               // To remove each table-row  when click event is fired
                                  $(document).on("click","#rem",function(){
                                  $(this).closest("tr").remove();
-                 
+                                  
 
                               
                 })
@@ -159,5 +158,15 @@
           
 
 	</script> 
+
+
+   <!--  <style type="text/css">
+      body{
+        background-image:url("receiptBg.png");
+        background-repeat: no-repeat;
+        background-position: relative;
+        background-size: cover;
+      }
+    </style> -->
 </body>
 </html>
